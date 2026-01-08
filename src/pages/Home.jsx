@@ -27,6 +27,9 @@ const Home = () => {
   if (loading) return <p className="loading">Loading countries...</p>;
   if (error) return <p className="error">{error}</p>;
 
+  const start = totalCountries === 0 ? 0 : (currentPage - 1) * 12 + 1;
+  const end = Math.min(currentPage * 12, totalCountries);
+
   return (
     <div>
       <div className="controls">
@@ -35,7 +38,7 @@ const Home = () => {
       </div>
 
       <p className="results-count">
-        Showing {countries.length} of {totalCountries} countries
+        Showing {start}-{end} of {totalCountries} countries
       </p>
 
       <CountryList
