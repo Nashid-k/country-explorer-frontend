@@ -4,7 +4,7 @@ function Pagination({ currentPage, totalPages, onPageChange, onNext, onPrev }) {
         const pages = [];
         const maxVisible = 5;
 
-        // Logic to determine which page numbers to display (UI only)
+      
         let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
         let endPage = Math.min(totalPages, startPage + maxVisible - 1);
 

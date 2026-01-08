@@ -13,7 +13,7 @@ const useCountries = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    // Debounce search to avoid too many API calls
+    
     const [debouncedSearch, setDebouncedSearch] = useState(search);
 
     useEffect(() => {
@@ -23,12 +23,12 @@ const useCountries = () => {
         return () => clearTimeout(timer);
     }, [search]);
 
-    // Reset to page 1 when filters change
+    
     useEffect(() => {
         setCurrentPage(1);
     }, [debouncedSearch, region]);
 
-    // Fetch data whenever page, search, or region changes
+    
     useEffect(() => {
         const fetchCountries = async () => {
             setLoading(true);
@@ -75,7 +75,6 @@ const useCountries = () => {
         setSelectedCountry,
         loading,
         error,
-        // Pagination
         currentPage,
         totalPages,
         goToPage,
