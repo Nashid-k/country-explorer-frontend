@@ -4,14 +4,15 @@ function Pagination({ currentPage, totalPages, onPageChange, onNext, onPrev }) {
         const pages = [];
         const maxVisible = 5;
 
-        let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
-        let end = Math.min(totalPages, start + maxVisible - 1);
+        // Logic to determine which page numbers to display (UI only)
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisible - 1);
 
-        if (end - start + 1 < maxVisible) {
-            start = Math.max(1, end - maxVisible + 1);
+        if (endPage - startPage + 1 < maxVisible) {
+            startPage = Math.max(1, endPage - maxVisible + 1);
         }
 
-        for (let i = start; i <= end; i++) {
+        for (let i = startPage; i <= endPage; i++) {
             pages.push(i);
         }
 
