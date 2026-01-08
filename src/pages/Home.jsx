@@ -44,19 +44,27 @@ const Home = () => {
             Showing {start}-{end} of {totalCountries} countries
           </p>
 
-          <CountryList
-            countries={countries}
-            onSelect={setSelectedCountry}
-          />
+          {countries.length > 0 ? (
+            <>
+              <CountryList
+                countries={countries}
+                onSelect={setSelectedCountry}
+              />
 
-          {totalPages > 1 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={goToPage}
-              onNext={nextPage}
-              onPrev={prevPage}
-            />
+              {totalPages > 1 && (
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={goToPage}
+                  onNext={nextPage}
+                  onPrev={prevPage}
+                />
+              )}
+            </>
+          ) : (
+            <div className="no-results">
+              <p>No countries found matching your criteria.</p>
+            </div>
           )}
         </>
       )}
