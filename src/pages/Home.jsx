@@ -3,10 +3,12 @@ import SearchBar from "../components/SearchBar";
 import RegionFilter from "../components/RegionFilter";
 import CountryList from "../components/CountryList";
 import CountryDetails from "../components/CountryDetails";
+import Pagination from "../components/Pagination";
 
 const Home = () => {
   const {
-    filteredCountries,
+    countries,
+    totalCountries,
     search,
     setSearch,
     region,
@@ -15,6 +17,11 @@ const Home = () => {
     setSelectedCountry,
     loading,
     error,
+    currentPage,
+    totalPages,
+    goToPage,
+    nextPage,
+    prevPage
   } = useCountries();
 
   if (loading) return <p className="loading">Loading countries...</p>;
@@ -27,10 +34,24 @@ const Home = () => {
         <RegionFilter value={region} onChange={setRegion} />
       </div>
 
+      <p className="results-count">
+        Showing {countries.length} of {totalCountries} countries
+      </p>
+
       <CountryList
-        countries={filteredCountries}
+        countries={countries}
         onSelect={setSelectedCountry}
       />
+
+      {totalPages > 1 && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={goToPage}
+          onNext={nextPage}
+          onPrev={prevPage}
+        />
+      )}
 
       {selectedCountry && (
         <>
