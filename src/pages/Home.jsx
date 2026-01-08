@@ -24,9 +24,6 @@ const Home = () => {
     prevPage
   } = useCountries();
 
-  if (loading) return <p className="loading">Loading countries...</p>;
-  if (error) return <p className="error">{error}</p>;
-
   const start = totalCountries === 0 ? 0 : (currentPage - 1) * 12 + 1;
   const end = Math.min(currentPage * 12, totalCountries);
 
@@ -37,23 +34,31 @@ const Home = () => {
         <RegionFilter value={region} onChange={setRegion} />
       </div>
 
-      <p className="results-count">
-        Showing {start}-{end} of {totalCountries} countries
-      </p>
+      {error && <p className="error">{error}</p>}
 
-      <CountryList
-        countries={countries}
-        onSelect={setSelectedCountry}
-      />
+      {loading ? (
+        <p className="loading">Loading countries...</p>
+      ) : (
+        <>
+          <p className="results-count">
+            Showing {start}-{end} of {totalCountries} countries
+          </p>
 
-      {totalPages > 1 && (
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={goToPage}
-          onNext={nextPage}
-          onPrev={prevPage}
-        />
+          <CountryList
+            countries={countries}
+            onSelect={setSelectedCountry}
+          />
+
+          {totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={goToPage}
+              onNext={nextPage}
+              onPrev={prevPage}
+            />
+          )}
+        </>
       )}
 
       {selectedCountry && (
