@@ -22,8 +22,14 @@ npm install
 npm run dev
 ```
 
+## Environment Variables
+
+For production deployment (Vercel), set:
+
+| Variable | Value |
+|----------|-------|
+| `VITE_API_URL` | `https://your-backend.onrender.com/api` |
+
 ## API
 
-This frontend connects to a Node.js backend at `http://localhost:5000/api/countries`.
-
-Make sure the backend is running before starting the frontend.
+This frontend connects to a Node.js backend. In development, it uses `http://localhost:5000/api`.
