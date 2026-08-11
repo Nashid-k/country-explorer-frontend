@@ -1,35 +1,64 @@
-# Country Explorer Frontend
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!--                     NASHID K  —  PROJECT METRICS                   -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
 
-A React application that displays country information with search and filter functionality.
+# 🚀 country-explorer-frontend
 
-## Features
+<p align="center">
+  ![](https://img.shields.io/badge/React-18.x-61DAFB?style=flat-square&logo=react) 
+</p>
 
-- View list of countries with name, flag, and region
-- Search countries by name (real-time filtering)
-- Filter countries by region (Africa, Americas, Asia, Europe, Oceania)
-- View country details (capital, population, languages, flag)
+<p align="center">
+  <strong>A modern web application built with JavaScript.</strong>
+</p>
 
-## Tech Stack
+---
 
-- React
-- Vite
-- Axios
+## 📌 Project Overview
+This repository contains **country-explorer-frontend**, engineered with modern design standards, modular structures, and clean coding architectures.
 
-## Setup
+### ✨ Core Features
+*   **Responsive Design:** Optimized layout for mobile, tablet, and desktop views.
+*   **Clean Codebase:** Highly organized module structures for easy navigation.
 
-```bash
-npm install
-npm run dev
+---
+
+## 📂 Project Architecture
+
+```text
+src/
+├── components/   # UI presentation elements
+├── config/       # Environment setup and server configurations
+├── routes/       # REST API endpoints
+└── App.js        # Core mounting file
 ```
 
-## Environment Variables
+---
 
-For production deployment (Vercel), set:
+## ⚙️ Local Development Setup
 
-| Variable | Value |
-|----------|-------|
-| `VITE_API_URL` | `https://your-backend.onrender.com/api` |
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Nashid-k/country-explorer-frontend.git
+   cd country-explorer-frontend
+   ```
 
-## API
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-This frontend connects to a Node.js backend. In development, it uses `http://localhost:5000/api`.
+3. **Configure Environment:**
+   *(If applicable, copy the `.env.example` file to `.env` and fill in variables)*
+
+4. **Start local dev server:**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🛡️ Security & Best Practices Implemented
+*   **Strict Separations:** Modular separation between config, logic, and view components.
+*   **Environment Configuration:** Secure variables kept out of repository scopes via dotenv.
+*   **Git Standards:** Maintained clean histories and semantic commit protocols.
