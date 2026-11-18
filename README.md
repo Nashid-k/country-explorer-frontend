@@ -1,64 +1,37 @@
-<!-- ══════════════════════════════════════════════════════════════════ -->
-<!--                     NASHID K  —  PROJECT METRICS                   -->
-<!-- ══════════════════════════════════════════════════════════════════ -->
+# Country Explorer — React Frontend
 
-# 🚀 country-explorer-frontend
+A React single-page application for browsing countries. Users can search by country name, filter by region, browse paginated results and open a detail view with country information.
 
-<p align="center">
-  ![](https://img.shields.io/badge/React-18.x-61DAFB?style=flat-square&logo=react) 
-</p>
+## Features
 
-<p align="center">
-  <strong>A modern web application built with JavaScript.</strong>
-</p>
+- Country search
+- Region filtering
+- Paginated country list
+- Country detail modal with flag, capital, population, region and languages
+- Loading, error and empty-result states
 
----
+## Stack
 
-## 📌 Project Overview
-This repository contains **country-explorer-frontend**, engineered with modern design standards, modular structures, and clean coding architectures.
+- React 19
+- Vite 7
+- React Router 7
+- Axios
+- CSS
 
-### ✨ Core Features
-*   **Responsive Design:** Optimized layout for mobile, tablet, and desktop views.
-*   **Clean Codebase:** Highly organized module structures for easy navigation.
+## Run locally
 
----
-
-## 📂 Project Architecture
-
-```text
-src/
-├── components/   # UI presentation elements
-├── config/       # Environment setup and server configurations
-├── routes/       # REST API endpoints
-└── App.js        # Core mounting file
+```bash
+git clone https://github.com/Nashid-k/country-explorer-frontend.git
+cd country-explorer-frontend
+npm install
+npm run dev
 ```
 
----
+The frontend expects the companion API to be available at `http://localhost:5000`. Start [country-explorer-backend](https://github.com/Nashid-k/country-explorer-backend) separately.
 
-## ⚙️ Local Development Setup
+## Scripts
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/Nashid-k/country-explorer-frontend.git
-   cd country-explorer-frontend
-   ```
-
-2. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Configure Environment:**
-   *(If applicable, copy the `.env.example` file to `.env` and fill in variables)*
-
-4. **Start local dev server:**
-   ```bash
-   npm run dev
-   ```
-
----
-
-## 🛡️ Security & Best Practices Implemented
-*   **Strict Separations:** Modular separation between config, logic, and view components.
-*   **Environment Configuration:** Secure variables kept out of repository scopes via dotenv.
-*   **Git Standards:** Maintained clean histories and semantic commit protocols.
+- `npm run dev` — start Vite
+- `npm run build` — create production assets
+- `npm run preview` — preview the build
+- `npm run lint` — run ESLint
